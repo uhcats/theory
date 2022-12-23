@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Alegreya:ital@1&family=Ubuntu&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="style/navigation.css">
+</head>
+<body>
+  <div id="root">
+
+
+
+
+    <section id = 'navigation-section'>
+
+    
+      <div class="navigationBar">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Theory of truth</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav" id = 'navigation-z-index'>
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#qwe">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Projects</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Contact</a>
+                </li>
+            
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      
+      <div class="navigationPicture">
+        <div class="text-center">
+        
+
+          <h1 class="titleInImage">Theory of Truth</h1>
+
+          <h2 class="titleInImage1">Stanisław Plust</h2>
+
+
+          <img src="style/picture1.jpg" class="img-fluid" alt="Responsive image"  >
+
+          
+        </div>
+      </div>
+
+
+    </section>
+
+    <section id ='text'>
+      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum asperiores veritatis vitae magnam delectus esse. Consequuntur ea fuga repudiandae quam dolorum, cum iste ipsa quidem. Provident nisi repudiandae debitis maxime?
+      Blanditiis a placeat dolores assumenda sed vitae quis cum, voluptas amet? Corporis necessitatibus maiores vero beatae recusandae expedita nam soluta molestiae eius eveniet similique facilis in deserunt laboriosam, optio sunt.
+      Magnam libero fugiat, nesciunt, velit minus culpa repellat vero consequuntur exercitationem dolores sunt fugit ullam officiis! Excepturi aut magni officiis a reprehenderit possimus. Tempora aut molestiae maxime expedita placeat reprehenderit.
+      Fugit iure sunt vero amet quod dolorum quisquam, dolores itaque similique quo perspiciatis officiis quia aut obcaecati laudantium, perferendis recusandae temporibus totam numquam nostrum! Illo quas quia quidem eum sit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas et alias, veritatis molestias blanditiis porro explicabo delectus velit adipisci reprehenderit. Repellat ducimus nihil modi tempora ex provident quibusdam dolorem rerum.
+      Vel iusto mollitia necessitatibus minima illo inventore veniam. Minus eos molestiae quasi iste placeat deleniti id nisi, similique aspernatur quisquam, aliquam maiores ipsum assumenda. Consequuntur, fugiat? Vero et libero fugiat!
+      Excepturi molestias fuga consequuntur iusto aspernatur deserunt nam? Eius dignissimos ab illo in dolorem aliquid labore exercitationem, et at officiis fuga, hic adipisci ullam nisi ipsam ad perferendis. Maxime, deserunt!
+      Hic quo culpa maxime, nobis porro fugit, in mollitia at soluta consectetur ad nam quos distinctio veniam eum vero? Assumenda pariatur nemo voluptatem beatae quis dicta sapiente rerum ex natus.class Scroller {
+  constructor(rootSelector) {
+    const rootElement = document.querySelector(rootSelector);
+
+    this.sections = document.querySelectorAll('section');
+
+    this.visibleSectionIndex = this.sections.find
+
+    this.currentSectionIndex = 0;
+
+    this.isThrottled = false;
+
+    this.isScrolledIntoView(this.sections[0]);
+
+    // Alternatyywa dla arrow function
+    // this.listenScroll = this.listenScroll.bind(this);
+  }
+
+  isScrolledIntoView(el) {
+    const rect = el.getBoundingClientRect();
+    const elemTop = rect.top;
+    const elemBot = Math.floor(rect.bottom);
+
+
+    const isVisible = (elemTop >= 0) && (elemBot <= window.innerHeight);
+
+
+    return isVisible;
+  }
+
+  listenScroll = (event) => {
+    if (this.isThrottled) return;
+    this.isThrottled = true;
+
+    setTimeout(() => {
+
+
+      this.isThrottled = false;
+    }, 1000)
+
+
+    const direction = event.wheelDelta < 0 ? 1 : -1;
+    console.log(event.wheelDelta);
+
+    this.scroll(direction);
+  }
+
+  scroll = (direction) => {
+    console.log(direction);
+
+    if (direction === 1) {
+      const isLastSection = this.currentSectionIndex === this.sections.length - 1;
+      if (isLastSection) return;
+    } else if (direction === -1) {
+      const firstSection = this.currentSectionIndex === 0;
+      if (firstSection) return;
+    }
+
+    this.currentSectionIndex = this.currentSectionIndex + direction;
+
+    this.scrollToCurrentSection();
+
+  }
+
+  scrollToCurrentSection = () => {
+    this.sections[this.currentSectionIndex].scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    })
+
+  }
+}</h2>
+    </section>
+
+
+  </div>
+</body>
+
+<script src= '/javascript/main.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</html>
