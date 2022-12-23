@@ -68,84 +68,11 @@
     </section>
 
     <section id ='text'>
-      <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum asperiores veritatis vitae magnam delectus esse. Consequuntur ea fuga repudiandae quam dolorum, cum iste ipsa quidem. Provident nisi repudiandae debitis maxime?
-      Blanditiis a placeat dolores assumenda sed vitae quis cum, voluptas amet? Corporis necessitatibus maiores vero beatae recusandae expedita nam soluta molestiae eius eveniet similique facilis in deserunt laboriosam, optio sunt.
-      Magnam libero fugiat, nesciunt, velit minus culpa repellat vero consequuntur exercitationem dolores sunt fugit ullam officiis! Excepturi aut magni officiis a reprehenderit possimus. Tempora aut molestiae maxime expedita placeat reprehenderit.
-      Fugit iure sunt vero amet quod dolorum quisquam, dolores itaque similique quo perspiciatis officiis quia aut obcaecati laudantium, perferendis recusandae temporibus totam numquam nostrum! Illo quas quia quidem eum sit? Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas et alias, veritatis molestias blanditiis porro explicabo delectus velit adipisci reprehenderit. Repellat ducimus nihil modi tempora ex provident quibusdam dolorem rerum.
-      Vel iusto mollitia necessitatibus minima illo inventore veniam. Minus eos molestiae quasi iste placeat deleniti id nisi, similique aspernatur quisquam, aliquam maiores ipsum assumenda. Consequuntur, fugiat? Vero et libero fugiat!
-      Excepturi molestias fuga consequuntur iusto aspernatur deserunt nam? Eius dignissimos ab illo in dolorem aliquid labore exercitationem, et at officiis fuga, hic adipisci ullam nisi ipsam ad perferendis. Maxime, deserunt!
-      Hic quo culpa maxime, nobis porro fugit, in mollitia at soluta consectetur ad nam quos distinctio veniam eum vero? Assumenda pariatur nemo voluptatem beatae quis dicta sapiente rerum ex natus.class Scroller {
-  constructor(rootSelector) {
-    const rootElement = document.querySelector(rootSelector);
+      <h1 class = 'author-name'>Alfred Tarski</h1>
 
-    this.sections = document.querySelectorAll('section');
-
-    this.visibleSectionIndex = this.sections.find
-
-    this.currentSectionIndex = 0;
-
-    this.isThrottled = false;
-
-    this.isScrolledIntoView(this.sections[0]);
-
-    // Alternatyywa dla arrow function
-    // this.listenScroll = this.listenScroll.bind(this);
-  }
-
-  isScrolledIntoView(el) {
-    const rect = el.getBoundingClientRect();
-    const elemTop = rect.top;
-    const elemBot = Math.floor(rect.bottom);
-
-
-    const isVisible = (elemTop >= 0) && (elemBot <= window.innerHeight);
-
-
-    return isVisible;
-  }
-
-  listenScroll = (event) => {
-    if (this.isThrottled) return;
-    this.isThrottled = true;
-
-    setTimeout(() => {
-
-
-      this.isThrottled = false;
-    }, 1000)
-
-
-    const direction = event.wheelDelta < 0 ? 1 : -1;
-    console.log(event.wheelDelta);
-
-    this.scroll(direction);
-  }
-
-  scroll = (direction) => {
-    console.log(direction);
-
-    if (direction === 1) {
-      const isLastSection = this.currentSectionIndex === this.sections.length - 1;
-      if (isLastSection) return;
-    } else if (direction === -1) {
-      const firstSection = this.currentSectionIndex === 0;
-      if (firstSection) return;
-    }
-
-    this.currentSectionIndex = this.currentSectionIndex + direction;
-
-    this.scrollToCurrentSection();
-
-  }
-
-  scrollToCurrentSection = () => {
-    this.sections[this.currentSectionIndex].scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    })
-
-  }
-}</h2>
+      <img src="/style/alfred.jpg" class="rounded float-right" id = 'alfred' alt="...">
+      <h2 class = 'underTitle'>Kim był ?</h2>
+      <p class = 'textAbout'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit odio obcaecati eaque minus excepturi fugiat explicabo. Ut perferendis consequuntur quia incidunt? Ad corporis hic possimus quo exercitationem, enim necessitatibus quam? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque rerum id eligendi at, nisi deleniti nesciunt nobis corporis pariatur cupiditate distinctio, commodi facere iusto vero facilis sunt atque inventore excepturi?</p>
     </section>
 
 
