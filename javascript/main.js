@@ -1,22 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
   const scroller = new Scroller('#root');
-  console.log(scroller);
-
   document.addEventListener('wheel', scroller.listenScroll);
-
-
-
-  function scroll(direction) {
-
-
-  }
-
-  function scrollToCurrentSection() {
-
-
-  }
-
 })
 
 class Scroller {
@@ -32,9 +17,6 @@ class Scroller {
     this.isThrottled = false;
 
     this.isScrolledIntoView(this.sections[0]);
-
-    // Alternatyywa dla arrow function
-    // this.listenScroll = this.listenScroll.bind(this);
   }
 
   isScrolledIntoView(el) {
@@ -61,13 +43,13 @@ class Scroller {
 
 
     const direction = event.wheelDelta < 0 ? 1 : -1;
-    console.log(event.wheelDelta);
+
 
     this.scroll(direction);
   }
 
   scroll = (direction) => {
-    console.log(direction);
+
 
     if (direction === 1) {
       const isLastSection = this.currentSectionIndex === this.sections.length - 1;
@@ -77,7 +59,46 @@ class Scroller {
       if (firstSection) return;
     }
 
+
+    const sectionButton = document.querySelectorAll('.sectionScrollTo');
+
+    const sections = document.querySelectorAll('.section');
+
+    sectionButton.forEach((section, index) => {
+      section.addEventListener('click', () => {
+        
+  
+       
+    
+          const CurrentElementClass = `section${index}`
+          const element = 
+          document.querySelector(`[data-name="${CurrentElementClass}"]`);
+        
+                          
+         element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+
+         this.currentSectionIndex = index;
+      })
+    })
+  
+      
+  
+    
+  
+  
+
+
+
+
     this.currentSectionIndex = this.currentSectionIndex + direction;
+
+
+    console.log(this.currentSectionIndex);
+
+
+
+
+
 
     this.scrollToCurrentSection();
 
@@ -91,3 +112,11 @@ class Scroller {
 
   }
 }
+
+// function scrollIntoSection(sectionIndex) {
+
+
+  
+
+
+// }

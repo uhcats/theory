@@ -10,7 +10,7 @@
 
 
 #navigation-section {
-  height: 100vh;
+  max-height: 100vh;
 }
 
 .nav-item {
@@ -94,4 +94,49 @@
   font-size: 24px;
   letter-spacing: 1px;
 
+}
+
+#commentary {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#commentary-box {
+  max-height: 600px;
+}
+#form-message {
+  max-height: 200px;
+}
+
+.scroller {
+  color: white;
+  position: fixed;
+  left: -20%;
+  top: 30%;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.sectionScrollTo {
+  
+  width: 120px;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 10px 10px;
+}
+
+
+#carret {
+  font-size: 30px;
+  position: absolute;
+  right: 20%;
+  
+}
+
+#buttonCarret {
+  position: fixed;
+  top: 20%;
+  left: 10%;
 }
