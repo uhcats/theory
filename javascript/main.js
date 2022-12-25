@@ -60,32 +60,29 @@ class Scroller {
     }
 
 
-    const sectionButton = document.querySelectorAll('.sectionScrollTo');
 
-    const sections = document.querySelectorAll('.section');
+
+    const sectionButton = document.querySelectorAll('.sectionScrollTo');
 
     sectionButton.forEach((section, index) => {
       section.addEventListener('click', () => {
-        
-  
-       
-    
-          const CurrentElementClass = `section${index}`
-          const element = 
-          document.querySelector(`[data-name="${CurrentElementClass}"]`);
-        
-                          
-         element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
 
-         this.currentSectionIndex = index;
+        const CurrentElementClass = `section${index}`
+        const element =
+          document.querySelector(`[data-name="${CurrentElementClass}"]`);
+
+
+        element.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+
+        this.currentSectionIndex = index;
       })
     })
-  
-      
-  
-    
-  
-  
+
+
+
+
+
+
 
 
 
@@ -113,10 +110,15 @@ class Scroller {
   }
 }
 
-// function scrollIntoSection(sectionIndex) {
 
 
-  
+// Button Carret
 
 
-// }
+const buttonCarret = document.querySelector('#buttonCarret');
+const scroller = document.querySelector('.scroller');
+
+buttonCarret.addEventListener('click', () => {
+  scroller.classList.toggle('left');
+  buttonCarret.classList.toggle('rotation');
+})
