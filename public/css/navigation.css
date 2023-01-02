@@ -3,10 +3,27 @@
   border: 0;
   padding: 0;
   font-family: 'Alegreya', serif;
-  overflow: hidden;
- 
+  
 
 }
+
+::-webkit-scrollbar {
+  width: 1.5em;
+  
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(17,17,17);
+
+}
+
+::-webkit-scrollbar-thumb {
+  
+  background-color: rgb(48,48,48);
+  border-radius: 100vw;
+}
+
+
 
 
 #navigation-section {
@@ -17,8 +34,9 @@
   font-size: 20px;
 }
 .img-fluid {
-
-  height: 100vh;
+  position: relative;
+  z-index: -1;
+  height: 90vh;
   width: 100%;
 }
 
@@ -172,6 +190,32 @@
 
 }
 
+#interactive-activity {
+  font-size: 20px;
+  
+  
+}
+
+#commentary-section-activity {
+  text-decoration: none;
+  padding-left:  2em;
+  padding-right:  2em;
+}
+
 #buttonCarret.rotation {
   transform: translateX(5vw) rotate(90deg);
 }
+
+
+.loginpage {
+  display: flex;
+  flex-direction: column;
+}
+
+.textH1Sign {
+  color: #46f0ff;
+  font-size: 50px;
+  margin: auto auto;
+  margin-top: 1.5em;
+}
+
