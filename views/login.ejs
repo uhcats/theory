@@ -1,27 +1,43 @@
 <html>
   <head>
-     <title>vos</title>
+     <title>Login</title>
      <link rel='stylesheet' type = 'text/css' href='css/login.css' />
   </head>
   <body>
     <div class="center">
       <h1 class = 'login'>Login</h1>
-      <form method="post">
+
+
+      <form action="/login" method="POST">
+
+        <% if(messages.error) {%>
+          <div class = 'alert alert-danger'>
+            <strong><%= messages.error %></strong>
+          </div>
+        <%}%>
+
+
         <div class="txt_field">
-          <input type="text" required>
+          <input name="email" type="email" required>
           <span></span>
-          <label>Username</label>
+          <label>Email</label>
         </div>
         <div class="txt_field">
-          <input type="password" required>
+          <input name = 'password' type="password" required>
           <span></span>
           <label>Password</label>
         </div>
-        <input type="submit" value="Login">
+        <input href = "/" type="submit" value="Login">
         <div class="signup_link">
           Not a member? <a href="register" id = 'signup'>Signup</a>
         </div>
       </form>
+
+
+
+
+
+     
     </div>
   </body>
  </html>
