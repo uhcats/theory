@@ -13,36 +13,14 @@
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <link rel="stylesheet" href="style/navigation.css">
+  <link type ='text/css' rel="stylesheet" href="css/navigation.css">
 </head>
 <body>
+  
+
   <div id="root">
 
-
-    <div class="scroller">
-      <ul>
-        <li class = 'sectionScrollTo'>Sekcja 0
-          <i id ='carret' class="fa-solid fa-caret-right"></i>
-        </li>
-        <li class = 'sectionScrollTo'>Sekcja 1
-          <i id ='carret' class="fa-solid fa-caret-right"></i>
-        </li>
-        <li class = 'sectionScrollTo'>Sekcja 2
-          <i id ='carret' class="fa-solid fa-caret-right"></i>
-        </li>
-        <li class = 'sectionScrollTo'>Sekcja 3
-          <i id ='carret' class="fa-solid fa-caret-right"></i>
-        </li>
-        <li class = 'sectionScrollTo'>Sekcja 4
-          <i id ='carret' class="fa-solid fa-caret-right"></i>
-        </li>
-        
-      
-      </ul>
-    
-    </div>
-    <i id ='buttonCarret' class="fa-solid fa-caret-right"></i>
-
+  
 
     <section id = 'navigation-section' class = 'section' data-name = 'section0'>
 
@@ -57,13 +35,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav" id = 'navigation-z-index'>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#qwe">About</a>
+                  <a class="nav-link active" aria-current="page" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Projects</a>
+                  <a class="nav-link" href="#projects">Projects</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Contact</a>
+                  <a class="nav-link" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" id = 'login' href="register">Login</a>
                 </li>
             
               </ul>
@@ -138,16 +119,16 @@
                   quis nostrud exercitation ullamco laboris nisi ut aliquip consequat.
                 </p>
     
-                <div class="small d-flex justify-content-start">
-                  <a href="#!" class="d-flex align-items-center me-3">
-                    <i class="far fa-thumbs-up me-2"></i>
-                    <p class="mb-0">Like</p>
+                <div id = 'interactive-activity' class="small d-flex justify-content-start">
+                  <a id= 'commentary-section-activity' href="#!" class="d-flex align-items-center me-3">
+                    <i id = 'likeThumb' class="far fa-thumbs-up me-2"></i>
+                    <p id = 'likeText' class="mb-0">Like</p>
                   </a>
-                  <a href="#!" class="d-flex align-items-center me-3">
+                  <aid= 'commentary-section-activity' href="#!" class="d-flex align-items-center me-3">
                     <i class="far fa-comment-dots me-2"></i>
                     <p class="mb-0">Comment</p>
                   </a>
-                  <a href="#!" class="d-flex align-items-center me-3">
+                  <a id= 'commentary-section-activity'href="#!" class="d-flex align-items-center me-3">
                     <i class="fas fa-share me-2"></i>
                     <p class="mb-0">Share</p>
                   </a>
@@ -219,8 +200,10 @@
     </section>
 
   </div>
+
+
 </body>
 
-<script src= '/javascript/main.js'></script>
+<script type = 'text/javascript' src= "main.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>
